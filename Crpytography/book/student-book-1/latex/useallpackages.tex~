@@ -1,0 +1,57 @@
+\usepackage{amsmath,amssymb,amsthm}
+% \usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{fancyvrb}
+\usepackage{parskip} % This is probably already loaded by KOMA script
+\usepackage{lastpage}
+\usepackage{verbatim,boxedminipage,enumitem}
+\usepackage{hyperref}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{ifthen}
+\usepackage{color,graphicx}
+\usepackage{pgf}
+\usepackage{longtable}
+\usepackage{upquote} % for ' in verbatim env
+%\usepackage{xkeyval}
+%\usepackage{xargs}
+%\usepackage[all]{xy} -- COMMENTED OUT FOR F18
+%\SelectTips {cm}{} % xy
+%\usepackage{pmgraph}
+\usepackage{tobiShell}
+
+% --- pgf ---
+\usepackage{tikz}
+\usetikzlibrary{automata}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+%\usetikzlibrary{petri}
+%\usetikzlibrary{decorations.pathmorphing}
+%\usetikzlibrary{fit}
+%\usetikzlibrary{trees}
+%\usetikzlibrary{shadows}
+%\usetikzlibrary{shapes}
+%\usetikzlibrary{chain} % TODO: Why is this not found?
+%\pgfdeclarelayer{background}
+%\pgfdeclarelayer{foreground}
+%\pgfsetlayers{background,main,foreground}
+\usepackage{pgf,pgfarrows,pgfnodes}
+\usepackage{pgfplots}
+\usepackage{circuitikz}
+\usetikzlibrary{circuits}
+\usetikzlibrary{circuits.logic.US}
+ \usetikzlibrary{shapes.geometric}
+
+\usepackage{python}
+\usepackage{lscape}
+
+%===========================
+% Strikethrough
+% math - $\cancel{a}$
+% text - \sout{Hello world}
+%===========================
+\usepackage[normalem]{ulem}
+\usepackage{cancel}

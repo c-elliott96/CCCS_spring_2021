@@ -1,0 +1,10 @@
+% Python environment
+
+\usepackage{atbeginend}
+\BeforeBegin{python}{\mbox{}\\ \begin{minipage}{\textwidth}\vspace{3pt}}
+\AfterEnd{python}{\vspace{4pt} \end{minipage} \\ }
+
+
+\newenvironment{mypython}
+{\begin{python}}
+{\end{python}}

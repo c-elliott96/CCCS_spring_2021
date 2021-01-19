@@ -1,0 +1,30 @@
+\documentclass[a4paper,
+               headsepline,footsepline,
+               openany,oneside,chapterprefix,
+               12pt]
+\usepackage{import}
+\import{/home/cdellio/Documents/YLIOW/yliow}{mybookpreamble}
+
+% \input{/mybookpreamble.tex}
+\renewcommand\TITLE{CISS451}
+\renewcommand\AUTHOR{[JOHN DOE]}
+\renewcommand\SHORTAUTHOR{J.~DOE}
+
+\usepackage{makeidx}
+\makeindex
+
+\begin{document}
+\topmatter
+
+\input{chap-number-theory.tex}
+\input{chap-classical-ciphers.tex}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{thebibliography}{999}
+\input{bibliography.tex}
+\end{thebibliography}
+\printindex
+
+
+\end{document}

@@ -1,0 +1,33 @@
+\input{mybookpreamble.tex}
+\renewcommand\TITLE{CISS451}
+\renewcommand\AUTHOR{Yihsiang Liow}
+\renewcommand\SHORTAUTHOR{Y.~Liow}
+
+\usepackage{makeidx}
+\makeindex
+
+\begin{document}
+\topmatter
+
+\chapter{Classical ciphers}
+
+\chapter{Basic number theory}
+
+\chapter{RSA}
+
+\input{group.tex}
+
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{thebibliography}{999}
+\input{bibliography.tex}
+\end{thebibliography}
+
+
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+
+\end{document}

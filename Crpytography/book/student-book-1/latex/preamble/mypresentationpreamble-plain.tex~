@@ -1,0 +1,11 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer} % Animation removed
+
+
+
+% What's the difference???
+%\documentclass[handout,xcolor=pdftex,dvipsnames,table]{beamer}
+
+%\usepackage{beamerthemedefault} % plain style -- for handouts
+
+\usepackage{mypresentation}

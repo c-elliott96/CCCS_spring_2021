@@ -1,0 +1,86 @@
+% Sty file for thesis
+%
+% ISSUES:
+% - If the contents is more than 1 page, then the header on the second page
+%   of the contents section might be incorrect.
+% - Insert header + footer for contents page?
+% - Reduce the vertical spacing in the title page
+
+\newcommand\TITLE{SOME TITLE}
+\newcommand\AUTHOR{SOME AUTHOR}
+\newcommand\SHORTAUTHOR{SOME SHORT AUTHOR NAME}
+\newcommand\DEGREE{Bachelor of Science}
+\newcommand\AREA{Computer Science}
+\newcommand\INSTITUTION{Columbia College}
+\newcommand\DATE{\today}
+\newcommand\PURPOSE{A thesis submitted to \INSTITUTION \
+in partial fulfillment for the \DEGREE \ in \AREA}
+\newcommand\EMAIL{SOME EMAIL}
+\newcommand\ADVISOR{SOME ADVISOR}
+\usepackage{mymacro-new}
+
+\usepackage[automark]{scrpage2}
+
+\pagestyle{scrheadings}
+
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{8.5 in}
+\setlength{\oddsidemargin}{0 in}
+\setlength{\marginparwidth}{2 in}
+\setlength{\headheight}{14.5pt} % fancyhdr need this
+
+%\setlength{\oddsidemargin}{0 in}
+%\setlength{\evensidemargin}{0 in}
+
+%==============================================================================
+% Title page
+%==============================================================================
+\title {
+\mbox{} \\ \vspace{1in}\TITLE}
+\author{\textsc{\AUTHOR}}
+\date  {\textsc{\DATE}
+\\
+\vspace{1in}
+\PURPOSE
+\\
+\vspace{2in}
+\textsc{Advisor: \ADVISOR}
+}
+
+%==============================================================================
+% Header and footer
+%==============================================================================
+\clearscrheadfoot
+\ihead{\textsc{\TITLE}} % header left
+\ohead{\textsc{\S \thesection \ \rightmark}} % section on header-right
+\cfoot{\textsc{\thepage \ of \pageref{LastPage}}}
+\ifoot{\textsc{\SHORTAUTHOR}}
+\ofoot{\textsc{\TODAY}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+%==============================================================================
+% To adjust space before thm environment. This is needed because something is
+% wrong before of the parskip.
+%
+% TODO: Move this to another file? Maybe mymacro-new.sty?
+%==============================================================================
+\begingroup
+\makeatletter
+   \@for\theoremstyle:=definition,remark,plain\do{%
+     \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+        \addtolength\thm@preskip\parskip
+     }%
+   }
+\endgroup 
+
+%==============================================================================
+% Call \topmatter immediately after \begin{document}
+%==============================================================================
+\newcommand\topmatter {
+ \maketitle
+ \nopagebreak
+
+ \tableofcontents
+ \newpage
+}
+

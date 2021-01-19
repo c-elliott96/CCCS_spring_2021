@@ -1,0 +1,63 @@
+\newcommand\COURSENAME{SOME COURSE NAME}
+\newcommand\COURSESHORTNAME{SOME SHORT COURSE NAME}
+\newcommand\COURSENUMBER{SOME COURSE NUMBER}
+\newcommand\TITLE{SOME TITLE}
+\newcommand\AUTHOR{SOME AUTHOR}
+\newcommand\SHORTAUTHOR{SOME SHORT AUTHOR}
+\newcommand\DATE{\today}
+\newcommand\EMAIL{SOME EMAIL}
+
+\newcommand\HEADERLEFT{}
+\newcommand\HEADERRIGHT{}
+\newcommand\FOOTERLEFT{}
+\newcommand\FOOTERCENTER{\textsc{\thepage \ of \pageref{LastPage}}}
+\newcommand\FOOTERRIGHT{\textsc{\DATE}}
+
+\usepackage{mymacro-new}
+
+\usepackage[automark]{scrpage2}
+
+\pagestyle{scrheadings}
+\setlength{\parskip}{12pt}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0 in}
+\setlength{\evensidemargin}{0 in}
+\setlength{\marginparwidth}{1 in}
+
+%==============================================================================
+% Header and footer
+%==============================================================================
+\clearscrheadfoot
+\ihead{\HEADERLEFT} 
+\ohead{\HEADERRIGHT}
+\cfoot{\FOOTERCENTER}
+\ifoot{\FOOTERLEFT}
+\ofoot{\FOOTERRIGHT}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}} % WHAT IS THIS FOR?
+
+%==============================================================================
+% To adjust space before thm environment. This is needed because something is
+% wrong before of the parskip.
+%==============================================================================
+\begingroup
+\makeatletter
+   \@for\theoremstyle:=definition,remark,plain\do{%
+     \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+        \addtolength\thm@preskip\parskip
+     }%
+   }
+\endgroup 
+
+%==============================================================================
+% Place this immediately after \begin{document}
+%==============================================================================
+\newcommand\topmatter {
+ \newpage
+  \begin{center}
+ {\bf \COURSENUMBER: \COURSENAME} \\
+ {\bf \TITLE}
+ \end{center}
+ \mbox{} \\
+}

@@ -1,0 +1,64 @@
+%===================================================================
+% Various environments for listing/enumeration
+%===================================================================
+\newenvironment{mylist}
+{\begin{enumerate}[topsep=0pt, partopsep=0pt, 
+                    parsep=0pt, itemsep=0pt]
+}
+{\end{enumerate}
+}
+
+
+\newenvironment{mylistnotop}
+{
+ \mbox{} \\
+ \begin{minipage}{\textwidth}
+ \vspace{5pt}
+ **** DEPRECATED: use tightlist ***
+ \begin{enumerate}[topsep=0pt, partopsep=0pt, 
+                  parsep=0pt, itemsep=0pt]
+}
+{
+ \end{enumerate}
+ \vspace{6pt}
+ \end{minipage}
+}
+
+
+
+\newenvironment{tightlist}
+{
+ \mbox{} \\
+ \begin{minipage}{\textwidth}
+ \vspace{5pt}
+ \begin{enumerate}[topsep=0pt, partopsep=0pt, 
+                  parsep=0pt, itemsep=0pt]
+}
+{
+ \end{enumerate}
+ \vspace{6pt}
+ \end{minipage}
+}
+
+%==============================================================================
+% This has a larger label width for use with axioms.
+%==============================================================================
+\newenvironment{axioms}
+{
+ \mbox{} \\
+ \begin{minipage}{\textwidth}
+ \vspace{5pt}
+ \begin{enumerate}[leftmargin=1in,labelwidth=1in,
+                   topsep=0pt, partopsep=0pt, 
+                   parsep=0pt, itemsep=0pt]
+}
+{
+ \end{enumerate}
+ \vspace{6pt}
+ \end{minipage}
+}
+
+%==============================================================================
+% Shorthand for bullet point
+%==============================================================================
+\newcommand\li{\item[$\bullet$]}
