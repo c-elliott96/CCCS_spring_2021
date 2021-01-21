@@ -1,14 +1,19 @@
-\documentclass[a4paper,
-               headsepline,footsepline,
-               openany,oneside,chapterprefix,
-               12pt]
-\usepackage{import}
-\import{/home/cdellio/Documents/YLIOW/yliow}{mybookpreamble}
+% % Fixing font issues  % %
+\makeatletter
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{@nomath\sc}
+\makeatother
+% %                     % %
 
-% \input{/mybookpreamble.tex}
+\input{mybookpreamble.tex}
 \renewcommand\TITLE{CISS451}
-\renewcommand\AUTHOR{[JOHN DOE]}
-\renewcommand\SHORTAUTHOR{J.~DOE}
+\renewcommand\AUTHOR{[Christian Elliott]}
+\renewcommand\SHORTAUTHOR{C.~Elliott}
 
 \usepackage{makeidx}
 \makeindex
