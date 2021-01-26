@@ -1,0 +1,17 @@
+def inv(a, n):
+    for i in range(1, n):
+        if (i * a) % n == 1:
+            return i
+
+    return None
+
+if __name__ == '__main__':
+    print(inv(9, 4))
+    print(inv(25, 2))
+
+    for x in range(0, 25):
+        for y in range(0, 25):
+            inverse = inv(x, y)
+            if inverse != None:
+                print("The inverse of %d mod %d = %d" % (x, y, inverse)) 
+
