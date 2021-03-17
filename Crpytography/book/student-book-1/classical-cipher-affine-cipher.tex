@@ -1,1 +1,121 @@
 \section{Affine cipher}
+
+The Affine cipher encryption algorithm is as follows:
+\[
+E((a, b), x) = (ax + b) \hspace{0.5cm}\text{(mod 26)}
+\]
+
+The importance of this algorithm is the key value. Notice that it uses
+two values, $a$ and $b$, in the form $ax + b$. This means that the
+encryption value range is much larger, and there are many more keys
+for an attacker to try to compute the plaintext value.
+
+So, we know the formula for $E$ of the Affine cipher. What about $D$?
+
+We can write $D$ in terms of $E$.
+\begin{align*}
+D((a, b), (E(a, b), x)) &= x \hspace{0.5cm}\text{(mod 26)}\\ 
+D((a, b), ax + b) &= x \hspace{0.5cm}\text{(mod 26)}\\
+\end{align*}
+We know that every encryption must be decryptable for it to be used
+as a cipher.
+Let's assume that $D$ has the form
+\[
+D((a, b), x) = cx + d \hspace{0.5cm}\text{(mod 26)}
+\]
+If we apply some algebra to $E$ and $D$, we can arrive at
+\[
+D((a, b), ax + b) \equiv x \pmod{26}
+\]
+And then
+\begin{align*}
+  c(ax + b) + d &\equiv x \pmod{26} \\
+  cax + cb + d &\equiv x \pmod{26} \\
+\end{align*}
+For now, let's assume
+\[
+cax \equiv x \pmod{26}
+\]
+and
+\[
+cb + d \equiv 0 \pmod{26}
+\]
+For the above to be true, c and d must meet some specific criteria.
+Notice that $cax \equiv x \pmod{26}$. This means $c$ and $a$ must
+somehow cancel out (in mod 26).
+
+How do numbers cancel each other out in the modular world? Through
+multiplicitive inverses! 
+
+We will be able to discuss what to do with $cb + d \equiv 0 \pmod{26}$
+once we look at $cax \equiv x \pmod{26}$ first.
+
+We know that $c$ must be the multiplicitive inverse of $a \pmod{26}$.
+The multiplicitive inverse of $a$, in this case denoted $c$, satisfies
+\[
+ca \equiv 1 \pmod{26}
+\]
+In other words, what number multiplied by $a$ equals 1 in mod 26?
+
+The following python program produces all integers with multiplicitive
+inverses in mod 26.
+\begin{Verbatim}[frame=single]
+for i in range(26):
+  for j in range(26):
+    if i * j % 26 == 1:
+      print('%d is a mult. inverse of %d (mod 26)' % (j, i))
+\end{Verbatim}
+Outputs:
+\begin{Verbatim}[frame=single]
+[student@localhost tmp]$ python cipher-tools.py 
+1 is a mult. inverse of 1 (mod 26)
+9 is a mult. inverse of 3 (mod 26)
+21 is a mult. inverse of 5 (mod 26)
+15 is a mult. inverse of 7 (mod 26)
+3 is a mult. inverse of 9 (mod 26)
+19 is a mult. inverse of 11 (mod 26)
+7 is a mult. inverse of 15 (mod 26)
+23 is a mult. inverse of 17 (mod 26)
+11 is a mult. inverse of 19 (mod 26)
+5 is a mult. inverse of 21 (mod 26)
+17 is a mult. inverse of 23 (mod 26)
+25 is a mult. inverse of 25 (mod 26)
+\end{Verbatim}
+As you can see, not all integers in mod 26 have a multiplicitive
+inverse. This means that the value chosen for $a$ in our cipher
+must posess this quality.
+
+Alright, so we know the value of $c$. This multiplicitive
+inverse is denoted $a^{-1}$. Since we can now label $c$,
+we can do more work on the second part of the equation:
+\begin{align*}
+  cb + d &\equiv 0 \pmod{26} \\
+  a^{-1}b + d &\equiv 0 \pmod{26} \\
+  d &\equiv -a^{-1}b \pmod{26} \\
+\end{align*}
+We then can put it all together:
+\begin{align*}
+  D((a, b), x) &\equiv a^{-1}x - a^{-1}b \pmod{26} \\
+  &\equiv a^{-1}(x - b) \pmod{26} \\
+\end{align*}
+where $a$ must be invertible mod 26. 
+
+\begin{ex}
+  Encrypt the plaintext message \verb!gollum! using the key (3, 12) with the Affine Cipher.
+
+  Let $x = \verb!gollum!$
+  \begin{center}
+      \begin{itemize}
+      \item g $ = 6 \to 3(6) + 12 = 4 \pmod{26}$ \\
+      \item o $= 14 \to 3(14) + 12 = 2 \pmod{26}$ \\
+      \item l $= 11 \to 3(11) + 12 = 19 \pmod{26}$ \\
+      \item l $= 11 \to 3(11) + 12 = 19 \pmod{26}$ \\
+      \item u $= 20 \to 3(20) + 12 = 20 \pmod{26}$ \\
+      \item m $= 12 \to 3(12) + 12 = 22 \pmod{26}$ \\
+      \end{itemize}
+  \end{center}
+  Now we have $E((3, 12), x) = $\Verb![4, 2, 19, 19, 20, 22]! \\
+  Converting the ciphertext integer values back to lowercase ascii
+  we get
+  \Verb!ecttuv!.
+\end{ex}

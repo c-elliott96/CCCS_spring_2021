@@ -1,43 +1,49 @@
 import string
 
-TO_LOWER_ASCII_OFFSET = 32
+def to_int(c):
+    if not isinstance(c, str): raise ValueError("%s is not str" % c)
+    if len(c) != 1: raise ValueError("length of %s is not 1" % c)
+    if not('a' <= c <= 'z'): raise ValueError("char %s is not in a..z" % c)
 
+    return ord(c) - ord('a')
+
+def to_chr(i):
+    if not isinstance(i, int): raise ValueError("%s is not int" % i)
+    if i < 0 or i > 25: raise ValueError("%s is not in 0..25" % i)
+    return chr(i + ord('a'))
+
+def to_ints(cs):
+    ints = []
+    for c in cs:
+        ints.append(to_int(c))
+
+    return ints
+
+def to_chrs(xs):
+    chrs = []
+    for x in xs:
+        chrs.append(to_chr(x))
+
+    return chrs
 
 def cleanup(s):
-    str = ''
-    for char in s:
-        if char in string.ascii_lowercase:
-            str += char
-        if char in string.ascii_uppercase:
-            str += (chr(ord(char) + TO_LOWER_ASCII_OFFSET))
+    cs = s.lower()
+    xs = []
+    for c in cs:
+        if c in string.ascii_lowercase:
+            xs.append(c)
 
-    return str
-
+    return ''.join(xs)
 
 def Shift_E(k, s):
-    alphabet = string.ascii_lowercase
-    alphabet_len = 26
-    first = ord('a')
-    # ord() value of first char in our alphabet - 'a'
-    out_str = ''
-    print("Cleanup of s: %s" % cleanup(s))
-    for char in cleanup(s):
-        print(ord(char))
-        print(ord(char) - first)
-        print(((ord(char) - first) % 26))
-        print(chr(((ord(char) - first) % 26)) + first)
+    new_str = []
+    for val in s:
+        new_char = to_chr((to_int(val) + k) % 26)
+        new_str.append(new_char)
 
-        ord_val = ord(char) - first
-        
-        out_str += chr((ord(char) - first) % alphabet_len)
+    return ''.join(new_str)
 
-    return out_str
+k = int(input())
+m = input()
 
-print(ord('a'))
-print(ord('A'))
-
-print(ord('a') - ord('A'))
-
-print(cleanup("Hello, My name is dadsbasement#1234"))
-
-print(Shift_E(1, 'abc'))
+print(Shift_E(k, cleanup(m)))

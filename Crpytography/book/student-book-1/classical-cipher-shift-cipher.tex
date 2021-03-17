@@ -1,10 +1,124 @@
 \section{Shift cipher}
 
-\defterm{Jello}
-\begin{defn}
 
-  Shift Cipher
-  
-\end{defn}
-is a cipher that uses modular arithmetic to encrypt and decrpyt messages.
+\begin{defn} Shift Cipher \end{defn}
+
+The \defterm{shift cipher} is a cipher where a message is shifted by a constant value. 
+
+To unencrypt the message, the shift is applied to the encrypted message in reverse.
+
+\begin{ex}
+  Suppose we want to encrypt the string 'popcorn'.
+
+  Let $s$ be the set of our alphabet, the lowercase English letters. Therefore $s = \{a, b, c, \dots, z\}$
+
+  The shift cipher is not complex. It works by simply shifting the values of your alphabet by a constant integer.
+
+  Let us use the shift of 7.
+
+  So, we simply shift each letter of our plaintext message to the right by 7.
+
+  Therefore, $\{p, o, p, c, o, r, n\}$
+  becomes $\{w, v, w, j, v, y, u\}$
+
+  What were to happen if we had used a shift of 7 on the word 'today'?
+
+  This is where the shift cipher makes use of modular arithmetic. $t \to a$, because when you go past z, you simply wrap around back to the beginning of the alphabet, a.
+
+  Now we know that our ciphertext 'wvwjvyu' is the encrypted version of 'popcorn'.
+
+  To decrypt, one must simply apply the shift in the opposite direction to the ciphertext.
+
+  Therefore, $\{w, v, w, j, v, y, u\}$ becomes $\{p, o, p, c, o, r, n\}$.
+\end{ex}
+
+\section{Encryption and Decryption}
+
+The shift cipher is only a simple example of a type of cipher. It helps to discuss ciphers in a more general way.
+
+We can describe a cipher as a pair of functions $E : P \to C$ and $D : C \to P$ where $E$ is called the encryption function and $D$ is the decryption function.
+
+This allows us to consider $P$, the plaintext (unencrypted message) as follows:
+\[
+D(E(x)) = x \text{ for all } x \in P
+\]
+
+In plain words, this means you can decrypt the encrypted message to attain the original plaintext message. 
+
+In the case of the Caesar Cipher, can express our encryption function as
+\[
+E(x) = (SHIFT + ASCII\_VALUE(x)) \% 26
+\]
+
+\section{Attacking the Shift Cipher}
+
+Recall that the shift cipher is based off a simple shift value. In our
+example, the length of the alphabet was 26. We represented our values
+using 0 ... 25. Therefore, there were only 26 options for our shift value.
+
+This means that we can bruteforce the shift values.
+
+$0 \leq k \leq 25$. We can print all the decryptions of ciphertext $c$, by
+simply decrypting by every possible shift value.
+
+\textsc{Heuristic}
+
+If the message is long enough, we can actually break the shift cipher
+without needing to brute-force it. The letters in the English language
+appear in fairly predictable frequencies. The letter \texttt{e} is
+the most commonly appearing letter.
+
+The cipher doesn't mutate at all. That is to say, the same $k$ is used
+for every input. Therefore, if \texttt{e} $\to$ \texttt{i}, it will do so
+for the whole plaintext. This means that if we determine a best guess for
+which letter \texttt{e} $\to$ ?, we can guess at what the shift is. It is
+simply the value of the ciphertext minus the value of \texttt{e} (mod 26).
+
+Here is a table of the average probability of English letters a - z:
+
+\begin{center}
+  \begin{tabular} {|c|c|}
+    \hline
+    \textsc{Letter} & \textsc{Probability} \\
+    \hline
+    \texttt{e} & 0.127 \\
+    \hline
+    \texttt{t} & 0.091 \\
+    \texttt{a} & 0.082 \\
+    \texttt{o} & 0.075 \\
+    \texttt{i} & 0.070 \\
+    \texttt{n} & 0.067 \\
+    \texttt{s} & 0.063 \\
+    \texttt{h} & 0.061 \\
+    \texttt{r} & 0.060 \\
+    \hline
+    \texttt{d} & 0.043 \\
+    \texttt{l} & 0.040 \\
+    \hline
+    \texttt{c} & 0.028 \\
+    \texttt{u} & 0.028 \\
+    \texttt{m} & 0.024 \\
+    \texttt{w} & 0.023 \\
+    \texttt{f} & 0.022 \\
+    \texttt{g} & 0.020 \\
+    \texttt{y} & 0.020 \\
+    \texttt{p} & 0.019 \\
+    \texttt{b} & 0.015 \\
+    \hline
+    \texttt{v} & 0.010 \\
+    \texttt{k} & 0.008 \\
+    \texttt{j} & 0.002 \\
+    \texttt{x} & 0.001 \\
+    \texttt{q} & 0.001 \\
+    \texttt{z} & 0.001 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+These are merely the letters frequencies found in a large body of text.
+They are sure to change in some degree depending on the sample text.
+
+We can extend this ``commonly occurring logic can be extended to pairs of
+letters, known as \defterm{digrams}. Why stop at pairs of two letters?
+Of course, we can continue hunting for commonly occuring groups of letters.
 

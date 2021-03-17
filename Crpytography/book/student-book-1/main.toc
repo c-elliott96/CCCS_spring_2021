@@ -1,11 +1,13 @@
-\contentsline {chapter}{\numberline {1}Basic number theory}{3}{chapter.1}
-\contentsline {chapter}{\numberline {2}Classical ciphers}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Shift cipher}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Affine cipher}{6}{section.2.2}
-\contentsline {section}{\numberline {2.3}Vigenere cipher}{7}{section.2.3}
-\contentsline {section}{\numberline {2.4}Substitution cipher}{8}{section.2.4}
-\contentsline {section}{\numberline {2.5}Permutation cipher}{9}{section.2.5}
-\contentsline {section}{\numberline {2.6}Hill cipher}{10}{section.2.6}
-\contentsline {section}{\numberline {2.7}One-time pad cipher}{11}{section.2.7}
-\contentsline {section}{\numberline {2.8}Linear feedback shift register}{12}{section.2.8}
-\contentsline {chapter}{Bibliography}{13}{section.2.8}
+\contentsline {chapter}{\numberline {1}Basic number theory}{3}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Classical ciphers}{4}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Shift cipher}{5}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Encryption and Decryption}{6}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Attacking the Shift Cipher}{6}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Affine cipher}{8}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Vigenere cipher}{11}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Substitution cipher}{13}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Permutation cipher}{14}{section.2.7}% 
+\contentsline {section}{\numberline {2.8}Hill cipher}{15}{section.2.8}% 
+\contentsline {section}{\numberline {2.9}One-time pad cipher}{16}{section.2.9}% 
+\contentsline {section}{\numberline {2.10}Linear feedback shift register}{17}{section.2.10}% 
+\contentsline {chapter}{Bibliography}{18}{section.2.10}% 

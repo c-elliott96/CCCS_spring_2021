@@ -1,1 +1,62 @@
 \section{Vigenere cipher}
+
+The Vigenere cipher differs from the previous two ciphers in that it is
+polyalphabetic.
+
+Let's dig in.
+
+You select a keyword. For example \lq\lq hello''. [7, 4, 11, 11, 14] \\
+Suppose our plaintext is \verb!ihavethehighgroundnow!
+
+Notice that the key is shorter than the plaintext message. No worries.
+We simply must repeat the key as needed to satisfy the length of the
+plaintext. (with some unused overflow)
+
+Length(plaintext) = 21. Length of key = 5. We can repeat the key 5 times
+to match the length of the plaintext.
+
+The encryption works as follows: for every letter of the plaintext, we
+shift the alphabet by the value of the corresponding letter in the key.
+So, plaintext[0] = i = 8. key[0] = h = 7. Therefore, ciphertext[0]
+= (8 + 7) \% 26 = 15. Therefore ciphertext[0] = 15 = p.
+
+This process repeats for every value in the plaintext, shifting by the
+value of the key[i] \% len(key). 
+
+\begin{ex} Let's do a full example using the key and message we already discussed above.
+  
+  Let
+  message = \verb!ihavethehighgroundnow!
+  and 
+  key = \verb!hello!
+
+  Let's go ahead and convert both the key and the message to their numerical
+  value.
+  \begin{Verbatim}
+    to_ints(message) = [8, 7, 0, 21, 4, 19, 7, 4, 7, 8, 6,
+      7, 6, 17, 14, 20, 13, 3, 13, 14, 22]
+  \end{Verbatim}
+  and \Verb!to_ints(key) = [7, 4, 11, 11, 14]! \\
+  Let's iterate through message and convert each value.
+  \begin{Verbatim}
+    ciphertext = []
+    for i in range(len(message)):
+      cipher_char = (message[i] + key[i % len(key)]) % 26
+      ciphertext.append(cipher_char)
+    return to_chrs(ciphertext)
+  \end{Verbatim}
+  This will give us
+  \begin{Verbatim}
+    [15, 11, 11, 6, 18, 0, 11, 15, 18, 22, 13,
+      11, 17, 2, 2, 1, 17, 14, 24, 2, 3]
+    = pllgsalpswnlrccbroycd
+  \end{Verbatim}
+\end{ex}
+
+That is how we encrypt using the Vigenere cipher.
+To decrypt, we must have the key. We can then simply take the ciphertext
+and apply the key to it in the same way, only this time subtracting the value
+of the key from the encrypted character. We will arrive at the decrypted char.
+
+Todo: Attacking the Vigenere cipher using frequency analysis to determine the
+key length. 

@@ -1,0 +1,79 @@
+(I'll do the first few steps for you.)
+
+Let $G = \{e, A, B, C, D, E\}$ be a group of size 6. (Therefore
+all the symbols $e, A, B, C, D, E$ are distinct.)
+where $e$ is the identity element.
+We have to complete the following group table:
+\begin{longtable}{|c||c|c|c|c|c|c|}
+\hline
+$*$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline\hline
+$e$ &     &     &     &     &     &     \\ \hline
+$A$ &     &     &     &     &     &     \\ \hline
+$B$ &     &     &     &     &     &     \\ \hline
+$C$ &     &     &     &     &     &     \\ \hline
+$D$ &     &     &     &     &     &     \\ \hline
+$E$ &     &     &     &     &     &     \\ \hline
+\end{longtable}
+Since $e$ is the identity element we have
+\begin{longtable}{|c||c|c|c|c|c|c|}
+\hline
+$*$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline\hline
+$e$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline
+$A$ & $A$ &     &     &     &     &     \\ \hline
+$B$ & $B$ &     &     &     &     &     \\ \hline
+$C$ & $C$ &     &     &     &     &     \\ \hline
+$D$ & $D$ &     &     &     &     &     \\ \hline
+$E$ & $E$ &     &     &     &     &     \\ \hline
+\end{longtable}
+$AA$ can be $e, B, C, D$, or $E$.
+
+\textsc{Case 1:} $AA = e$.
+\begin{longtable}{|c||c|c|c|c|c|c|}
+\hline
+$*$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline\hline
+$e$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline
+$A$ & $A$ & $e$ &     &     &     &     \\ \hline
+$B$ & $B$ &     &     &     &     &     \\ \hline
+$C$ & $C$ &     &     &     &     &     \\ \hline
+$D$ & $D$ &     &     &     &     &     \\ \hline
+$E$ & $E$ &     &     &     &     &     \\ \hline
+\end{longtable}
+$AB$ can be $C,D,E$.
+
+\textsc{Case 1.1:} $AA = e, AB = C$.
+\begin{longtable}{|c||c|c|c|c|c|c|}
+\hline
+$*$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline\hline
+$e$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline
+$A$ & $A$ & $e$ & $C$ &     &     &     \\ \hline
+$B$ & $B$ &     &     &     &     &     \\ \hline
+$C$ & $C$ &     &     &     &     &     \\ \hline
+$D$ & $D$ &     &     &     &     &     \\ \hline
+$E$ & $E$ &     &     &     &     &     \\ \hline
+\end{longtable}
+It seems that $AC$ can be $B,D$, or $E$ (3 choices).
+But in fact
+from $AB = C$, we get
+\begin{align*}
+           A(AB) &= AC \\
+\THEREFORE (AA)B &= AC & & \text{by associativity axiom} \\
+\THEREFORE eB    &= AC & & \text{since $AA = e$}\\
+\THEREFORE B     &= AC & & \text{by neutrality axiom}
+\end{align*}
+Therefore there is only one choice for $AC$, i.e., $AC = B$.
+Hence
+\begin{longtable}{|c||c|c|c|c|c|c|}
+\hline
+$*$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline\hline
+$e$ & $e$ & $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline
+$A$ & $A$ & $e$ & $C$ & $B$ &     &     \\ \hline
+$B$ & $B$ &     &     &     &     &     \\ \hline
+$C$ & $C$ &     &     &     &     &     \\ \hline
+$D$ & $D$ &     &     &     &     &     \\ \hline
+$E$ & $E$ &     &     &     &     &     \\ \hline
+\end{longtable}
+(Pro tip: Don't just brute force and try all possible options.
+Use the algebraic relations as much as possible to cut down on
+the number of cases to examine. Also, keep the cases organized
+so that you can iterate over all of them without missing any.)
+

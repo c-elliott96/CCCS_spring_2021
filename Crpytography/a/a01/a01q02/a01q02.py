@@ -7,5 +7,3 @@ def q_02():
 
     return num_sols
 
-if __name__ == '__main__':
-    print(q_02())

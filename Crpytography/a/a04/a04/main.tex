@@ -1,0 +1,454 @@
+\input{myassignmentpreamble}
+\input{yliow}
+\input{ciss451}
+
+\renewcommand\AUTHOR{John Doe}
+\renewcommand\EMAIL{jdoe@gmail.com}
+\renewcommand\TITLE{Assignment 4}
+
+\renewcommand{\thethm}{\arabic{thm}}% Remove subsection from theorem counter representation
+
+\begin{document}
+\topmatter
+
+\textsc{Objectives}
+\begin{enumerate}[nosep]
+\item Use group axioms
+\item Write a complete proof for a fact regarding groups
+\item Construct groups when given a size 
+\end{enumerate}
+
+Make sure you read the comments before Q1 very carefully
+before hacking proofs.
+
+\newpage
+\textsc{Basic math writing}
+
+If you have a sequence of deductions where the left-hand-side is the same,
+you can write this:
+\begin{align*}
+x &= 1 + 2 + 3 + 4 + 5 \\
+\THEREFORE x &= 3 + 3 + 4 + 5 \\
+\THEREFORE x &= 6 + 4 + 5
+\end{align*}
+
+Of course this is a shorthand for saying
+\lq\lq $x$ is 1 + 2 + 3 + 4 + 5.
+Therefore $x$ is $3 + 3 + 4 + 5$.
+Therefore $x$ is $6 + 4 + 5$."
+It's \lq\lq proper math" (just like \lq\lq proper English") to write
+\begin{align*}
+x &= 1 + 2 + 3 + 4 + 5 \\
+&= 3 + 3 + 4 + 5 \\
+&= 6 + 4 + 5 
+\end{align*}
+
+Because that's the same as saying
+\lq\lq $x$ is 1 + 2 + 3 + 4 + 5, \textit{which is} 3 + 3 + 4 + 5,
+\textit{which is} 6 + 4 + 5."
+When you need to change the left-hand side,
+you would write
+\begin{align*}
+x &= 1 + 2 + 3 + 4 + 5 \\
+&= 3 + 3 + 4 + 5 \\
+&= 6 + 4 + 5 \\
+\THEREFORE x + 1
+&= 6 + 4 + 5 + 1\\
+&= 10 + 5 + 1
+\end{align*}
+
+Or you can use words:
+\begin{align*}
+x &= 1 + 2 + 3 + 4 + 5 \\
+&= 3 + 3 + 4 + 5 \\
+&= 6 + 4 + 5
+\end{align*}
+\underline{and therefore}
+\begin{align*}
+x + 1
+&= 6 + 4 + 5 + 1\\
+&= 10 + 5 + 1
+\end{align*}
+
+When a sequence of deductions is not computational like the above,
+it might be better not to write in the above form in a math paragraph
+form, but rather in a text paragraph form:
+
+\underline{Since $x$ is $6+4+5$, adding 1, we get $x + 1$ is $6+4+5+1$.}
+
+This form of writing is best when you are not doing computations.
+This is especially true when you have \lq\lq for all" and \lq\lq there exists"
+quantifiers in your argument.
+You can of course mix text paragraph form and math paragraph form.
+For instance:
+
+\underline{For all $x$ and $y$ in $\R$ with $x > 0$ and $y > 0$, there is some
+integer $n$ such that}
+\begin{align*}
+           nx &> y \\
+\THEREFORE n  &> y/x
+\end{align*} 
+
+Frequently you need to justify an argument.
+For instance:
+
+\underline{By the neutral axiom,}
+\[
+xy = (xy)e
+\]
+\underline{Therefore by the associativity axiom}
+\[
+xy = x(ye)
+\]
+
+Or you can do it this way:
+\begin{align*}
+xy &= (xy)e     & &\text{by the neutrality axiom}   \\
+   &= x(ye)     & &\text{by the associativty axiom}
+\end{align*}
+(This style is for classroom use. Most books/research papers actually
+prefer the previous style.)
+Of course besides quoting axioms, you can also quote assumptions, theorems,
+etc.
+\begin{align*}
+xy &= (xy)e     & &\text{by the neutrality axiom}   \\
+   &= x(ye)     & &\text{by the associativty axiom} \\
+   &= x(y(wz))  & &\text{by Theorem 42}
+\end{align*}
+
+Do not start your proof abruptly.
+You for example reference a given assumption:
+
+\underline{Since $x > 0$, we have}
+\begin{align*}
+           \sqrt{x}     &> 0 \\
+\THEREFORE \sqrt{x} + 1 &> 1 \\
+\THEREFORE \frac{\sqrt{x} + 1}{x} &> \frac{1}{x}
+\end{align*}
+
+Compare this to without the \lq\lq Since ...":
+\begin{align*}
+           \sqrt{x}     &> 0 \\
+\THEREFORE \sqrt{x} + 1 &> 1 \\
+\THEREFORE \frac{\sqrt{x} + 1}{x} &> \frac{1}{x}
+\end{align*}
+
+you'll see that the second version is very abrupt.
+
+%==============================================================================
+\newpage
+\textsc{Writing proof by induction}
+
+For proof by induction, state clearly your $P(n)$.
+When you are proving the base case, say you are proving the base case.
+When you are proving the inductive case, say you are proving the inductive
+case. When you are done with the inductive case, say you are done.
+When you are completely done, say so and make a recap. 
+That's called good writing: lead the reader.
+Read a proof by induction from any textbook (or on the web).
+Here's a standard example.
+
+Prove that $1 + 2 + \cdots + n = n(n+1)/2$.
+
+We will prove the above by mathematical induction.
+(That's called leading the reader.)
+Let $P(n)$ be the statement:
+\[
+P(n): 1 + 2 + \cdots + n = n(n+1)/2
+\]
+for $n \geq 1$.
+
+We will first prove the base case. When $n = 1$,
+\[
+1 + \cdots + n = 1
+\]
+and
+\[
+n(n+1)/2 = 1(1+1)/2 = 1
+\]
+Hence the base case $P(1)$ holds.
+
+Next, we will prove the inductive case.
+Assume that $P(n)$ holds, i.e.,
+\[
+1 + 2 + \cdots + n = \frac{n(n+1)}{2}
+\]
+Therefore we have the following:
+\begin{align*}
+1 + 2 + \cdots + n + (n+1) &= \frac{n(n+1)}{2} + (n + 1)           \\
+                           &= (n+1) \left( \frac{n}{2} + 1 \right) \\
+                           &= (n+1) \left( \frac{n + 2}{2} \right) \\
+                           &= \frac{(n+1)((n + 1) + 1)}{2} 
+\end{align*}
+Therefore $P(n+1)$ holds and hence the inductive case holds.
+
+Therefore by the principle of (weak) mathematical induction,
+$P(n)$ holds for all $n \geq 1$, i.e.,
+\[
+1 + 2 + \cdots + n = \frac{n(n+1)}{2}
+\]
+holds for all $n \geq 1$.
+\qed
+
+Read the above proof carefully several times.
+Then write your own version -- and compare it with the above.
+
+When an argument is long, note how I state what I'm going to prove
+and after the argument is complete, I 
+remind the reader the goal.
+
+Note also that in the above, there's one main argument.
+But there are two sub-arguments: the base case and the inductive case
+arguments.
+That structure (just like the structure in a piece of code) has to be clear:    
+
+\begin{enumerate}[nosep]
+\item[] We will prove the above by mathematical induction. ...
+\item[]
+\item[] \hspace{1cm} We will first prove the base case. ...
+\item[] \hspace{1cm} Hence the base case $P(1)$ holds.
+\item[]
+\item[] \hspace{1cm} Next, we will prove the inductive case. ...
+\item[] \hspace{1cm} Therefore $P(n+1)$ holds and hence the inductive case holds.
+\item[] 
+\item[] Therefore by the principle of (weak) mathematical induction,
+$P(n)$ holds for all $n \geq 1$, i.e.,
+\[
+1 + 2 + \cdots + n = \frac{n(n+1)}{2}
+\]
+holds for all $n \geq 1$.
+\end{enumerate}
+
+A well written proof has no holes (gaps), no errors, \textit{and reads
+well}.
+Think of you standing in front of a judge and jury defending your case:
+you are the butlet but you did not do it.
+The point is not whether \textit{you} believe yourself.
+Of course you do.
+But rather, can you make the \textit{judge and jury} believe you?
+
+After you are done, read your proof again.
+Even if there are no errors, can it be improved?
+Can it be shortened?
+Can it be written clearer?
+Or can you reach the same conclusion by a different and better route?
+
+%==============================================================================
+\newpage\textsc{Quoting/referencing axioms etc}
+
+Call the group axioms by these names:
+\begin{enumerate}[nosep]
+\li Closure axiom
+\li Associativity axiom
+\li Inverse axiom
+\li Neutrality axiom
+\end{enumerate}
+We have three tiny propositions in the notes.
+Call them
+\begin{enumerate}[nosep]
+\li Uniqueness of identity
+\li Uniqueness of inverse
+\li Cancellation property
+\end{enumerate}
+You can reference these in a text paragraph such as:
+
+\underline{By the associativity axiom, from $x * (x * y) = z$, we get
+$(x * x)* y = z$.}              
+
+Or in a math paragraph:
+\begin{align*}
+           x * (x * y) &= z     \\
+\THEREFORE (x * x)* y  &= z & & \text{by associativity axiom}
+\end{align*}
+
+%==============================================================================
+\newpage
+Q1. Let $f : G \rightarrow G'$ be an isomophism of group
+$(G, *, e)$ and $(G', *', e')$. Prove the following
+\begin{enumerate}[nosep]
+\item[(a)] $f(e) = e'$
+\item[(b)] If $x \in G$, then $f(x^{-1}) = f(x)^{-1}$. (Make sure you read
+those two ${}^{-1}$ very carefully!)
+\item[(c)] If $x \in G$, then $f(x^n) = f(x)^n$ for all integer $n$.
+(Hint: First prove this is true for $n \geq 0$ -- use induction.)
+\item[(d)] If $G$ is abelian, then $G'$ is also abelian.
+\end{enumerate}
+
+Besides (d), most of the algebraic facts of $G$ would correspond to the same
+algebraic facts in $G'$ since they are isomorphic.
+For instance if $G$ has exactly 10 elements of order 5, then $G'$
+also has exactly 10 elements of order 5 and
+if $G$ is a cyclic group of order 12,
+then $G'$ is also a cyclic group of order 12, etc.  
+
+(By the way, it should be clear that $f(f^{-1}(x)) = x$ and $f^{-1}(f(y)) = y$.
+That has nothing to do with group theory.
+That's just a fact about inverse functions.)
+
+\SOLUTION
+
+\input{q1.tex}
+
+%==============================================================================
+\newpage
+Q2.
+In the following, let $(G, *, e)$, $(G', *', e')$, and $(G'', *'', e'')$ be
+groups.
+\begin{enumerate}[nosep]
+
+\item[(a)]
+Let $\operatorname{id}_G : G \rightarrow G$ be the identity function
+$\operatorname{id}(x) = x$. Prove that $\operatorname{id}$ is a group isomorphism.
+
+\item[(b)] Let $f : G \rightarrow G'$ be a group isomorphism.
+Since $f$ is a bijection, it has an inverse function
+$f^{-1}: G' \rightarrow G$. Prove that $f^{-1}$ is also a group isomorphism.
+
+\item[(c)] Suppose
+$f : G \rightarrow G'$ and
+$f': G' \rightarrow G''$
+are group isomorphisms.
+Prove that the composition of function $f' \circ f: G \rightarrow G''$ is
+also a group isomorphism.
+
+\end{enumerate}
+The above says that the concept of group isomorphism is a an
+equivalence relation on the collection of all groups: if $G, G', G''$ are groups,
+then
+\begin{enumerate}[nosep]
+\li Reflexive: $G \simeq G$
+\li Symmetric: $G \simeq G' \implies G' \simeq G$
+\li Transitive: $G \simeq G', G' \simeq G'' \implies G \simeq G''$
+\end{enumerate}
+
+\SOLUTION
+
+\input{q2.tex}
+
+%==============================================================================
+\newpage
+Q3. If $(G, *, e)$ and $(G', *', e')$ are groups, then you can define
+$G'' = G \times G'$ (cartesian product)
+as the set of tuples $(x, x')$ where $x \in G$ and
+$x' \in G$, and you can also define $*''$ by
+\[
+(x,x') *'' (y,y') = (x * y, x' *' y') 
+\]
+Let $e'' = (e, e') \in G \times G'$.
+\begin{enumerate}[nosep]
+\item[(a)] Prove that $(G'', *'', e'')$ is a group.
+(Make sure you state clearly what is the inverse
+$(x, y)^{-1}$ of $(x, y)$ in $G \times G' = G''$.)
+\item[(b)] Prove that if $G$ and $G'$ are abelian, then $G''$ is also abelian.
+\item[(c)] Prove that $G \times \{e'\}$ is a subgroup of $G''$ which is
+isomorphic to $G$. Make sure you state the isomorphism function and then
+prove that it is a group isomorphism.
+You can and should think of $G \times \{e'\}$ as an isomorphic copy of
+$G$ inside $G''$.
+(Note that the intersection of $G \times \{e'\}$ and $\{e\} \times G'$
+is the simplest possible subgroup, i.e., $\{(e, e')\}$.)
+\item[(d)] Is $\Z/6$ isomorphic to $\Z/2 \times \Z/3$? Why?
+\item[(e)] Is $\Z/4$ isomorphic to $\Z/2 \times \Z/2$? Why?
+\end{enumerate}
+The above says that
+\begin{enumerate}[nosep]
+\li The cartesian product of groups is a group.
+\li The product of abelian groups is abelian.
+\li The product of $G, G'$ contains isomorphic copies of $G$ and $G'$.
+\end{enumerate}
+The concept
+is somewhat similar to the fact that the $x$-- and $y$--axis (two $\R$'s)
+appears inside (i.e., $\R^2$) and their intersection is $\{(0,0)\}$.
+The group product allows you to create more groups.
+Furthermore the group product can be easily understood if you
+know everything about the individual component groups.
+For instance since $\Z/2$ is a group (under $+$), you immediately
+have the group $\Z/2 \times \Z/2$, $\Z/2 \times \Z/2 \times \Z/2$, etc.
+
+\SOLUTION
+
+\input{q3.tex}
+
+%==============================================================================
+\newpage
+Q4.
+Recall that $S_n$ is the symmetric group on $n$ symbols, i.e.,
+$S_n$ is the set of bijections $\{1,...,n\}\rightarrow\{1,...,n\}$.
+Each element of $S_n$ can be thought of as a permutation of $\{1,...,n\}$.
+Recall that the bijection on $\{1, 2, 3, 4, 5, 6\}$
+\begin{align*}
+1 &\mapsto 3 \\
+2 &\mapsto 1 \\
+3 &\mapsto 2 \\
+4 &\mapsto 6 \\
+5 &\mapsto 5 \\
+6 &\mapsto 4 
+\end{align*}
+can be written using permutation notation
+\[
+\sigma = 
+\begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 \\
+3 & 1 & 2 & 6 & 5 & 4
+\end{pmatrix}
+\]
+or cycle notation
+\[
+\sigma = (1 \ 3 \ 2) (4 \ 6) (5)
+\]
+The above is an element of $S_6$.
+Note that it's clear that $|S_6| = 6!$.
+Of course you can compose bijections os $S_n$ since they are functions.
+For instance
+suppose I pick $\sigma=(1)(2 \ 3 \ 4)$ and $\tau = (1 \ 2)(3 \ 4)$ in
+$S_4$.
+Then
+\begin{align*}
+(\tau \circ \sigma)(1) &= \tau(\sigma(1)) = \tau(1) = 2 \\
+(\tau \circ \sigma)(2) &= \tau(\sigma(2)) = \tau(3) = 4 
+\end{align*}
+etc.~and of course $\tau \circ \sigma \in S_4$.
+Define the identity function $\operatorname{id}_n$ of $S_n$ by
+$\operatorname{id}_n(i) = i$ for all $i \in \{1,...,n\}$.
+Then $(S_n, \circ, \operatorname{id}_n)$ is a group (this is easy to prove --
+I'll just let you think about it.)
+
+\begin{enumerate}[nosep]
+
+\item[(a)]
+Draw the group table of $S_3$. (Note that $|S_3| = 3! = 6$.)
+
+\item[(b)]
+Is $S_3$ abelian?
+
+\item[(c)]
+What is the size of the largest cyclic subgroup of $S_3$?
+(For $\sigma \in S_3$, compute the order of $\sigma$, i.e., the smallest $k$ such that
+$\sigma^k = (1)(2)(3)$. What is the largest possible $k$ for all $\sigma \in S_3$?).
+
+\item[(d)] What is the size of the largest cyclic subgroup of $S_5$?
+
+\item[(e)] Is $S_n$ abelian if $n > 3$? (I hope it's obvious that $S_1 = C_1 = \Z/1$ and $S_2 = C_2 = \Z/2$ and are
+therefore dead easy.)
+
+\end{enumerate}
+
+\SOLUTION
+
+\input{q4.tex}
+
+%==============================================================================
+\newpage
+Q5. Find all non-isomorphic groups of size 6.
+First do a complete listing of all possible group tables.
+Narrow it down so that isomorphic ones are identified.
+For the remaining non-isomorphic groups, make them concrete
+by recognizing them as the standard groups mentioned in the notes:
+$\Z/N$, matrix groups, permutation/symmetric groups, etc.
+
+\SOLUTION
+
+\input{q5.tex}
+
+
+\end{document}
