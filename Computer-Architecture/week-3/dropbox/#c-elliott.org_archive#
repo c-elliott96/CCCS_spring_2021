@@ -1,0 +1,27 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/nerd/Documents/CCCS_spring_2021/Computer-Architecture/week-3/dropbox/c-elliott.org
+
+
+* Assignment
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2021-03-29 Mon 15:38
+  :ARCHIVE_FILE: ~/Documents/CCCS_spring_2021/Computer-Architecture/week-3/dropbox/c-elliott.org
+  :ARCHIVE_CATEGORY: c-elliott
+  :END:
+1. Ref. problem 8.16
+   1. A DMA cycle could take as long as \( \SI{750}{\nano}s \) without the need for
+      wait states. This corresponds to a clock period of \( \SI{750}{\nano}s / 3
+      = \SI{250}{\nano}s \), which in turn corresponds to a clock rate of about
+      \( \SI{4}{\mega\hertz} \). This approach would reduce power consumption.
+
+2. Ref. problems 8.17a and 8.17b
+
+   1. Telecommunications links can operate continuously by their nature, so
+      burst mode can't be used. Cycle-stealing is then necessary.
+
+   2. All the links of DMA channels have the same data rate, so they must
+      be given equal priority, or you won't be maximizing the throughput
+      potential.
+

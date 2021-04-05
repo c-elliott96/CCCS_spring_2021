@@ -1,0 +1,56 @@
+% Created 2021-03-29 Mon 15:38
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\author{Christian D. Elliott}
+\date{2021-03-29}
+\title{DropBox 3: Computer Architecture}
+\hypersetup{
+ pdfauthor={Christian D. Elliott},
+ pdftitle={DropBox 3: Computer Architecture},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Assignment}
+\label{sec:orgc79addb}
+\begin{enumerate}
+\item Ref. problem 8.16
+\begin{enumerate}
+\item A DMA cycle could take as long as \(\SI{750}{\nano}s\) without the need for
+wait states. This corresponds to a clock period of \(\SI{750}{\nano}s / 3
+      = \SI{250}{\nano}s\), which in turn corresponds to a clock rate of about
+\(\SI{4}{\mega\hertz}\). This approac would reduce power consumption.
+\end{enumerate}
+
+\item Ref. problems 8.17a and 8.17b
+
+\begin{enumerate}
+\item Telecommunications links can operate continuously by their nature, so
+burst mode can't be used. Cycle-stealing is then necessary.
+
+\item All the links of DMA channels have the same data rate, so they must
+be given equal priority, or you won't be maximizing the throughput
+potential.
+\end{enumerate}
+\end{enumerate}
+\end{document}
