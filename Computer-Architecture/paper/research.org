@@ -3,143 +3,147 @@
 #+Date: April 14, 2021
 
 #+LATEX_CLASS: article
-#+LATEX_CLASS_OPTIONS: [letterpaper]
-#+LATEX_HEADER:
+#+LATEX_CLASS_OPTIONS: [letterpaper, 12pt]
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \doublespacing
+#+LATEX_HEADER: \usepackage{ifpdf}
+#+LATEX_HEADER: \usepackage{mla-paper}
 
-* Idea 1: Farming is set to change.
+# * Idea 1: Farming is set to change.
 
-  Why? Our changing climate seems poised to make traditional farming more and
-  more infeasible.
+#   Why? Our changing climate seems poised to make traditional farming more and
+#   more infeasible.
 
-  What is there to do? Modernize, as changes demand.
+#   What is there to do? Modernize, as changes demand.
 
-  What is there to modernize? Find solutions to new variables like unpredictable
-  weather. E.g. Move indoors.
+#   What is there to modernize? Find solutions to new variables like unpredictable
+#   weather. E.g. Move indoors.
 
-* Idea 2: New technologies will play a key role in the coming evolution
+# * Idea 2: New technologies will play a key role in the coming evolution
   
-** New energy solutions
-   Nuclear, wind, solar primarily - these could play a role in modernization
-   of farming
+# ** New energy solutions
+#    Nuclear, wind, solar primarily - these could play a role in modernization
+#    of farming
 
-** Possible farm evolutions
-   - Climate-controlled environment
-   - Automation of physical operations of facilities
-   - ML/IoT devices for real-time management systems
-     - Nutrient/watering balancer, same for AC/air pressure
-   - Large-scale solutions will demand high efficiency
-     - Invest a lot, maximize production scale, minimize overhead costs
+# ** Possible farm evolutions
+#    - Climate-controlled environment
+#    - Automation of physical operations of facilities
+#    - ML/IoT devices for real-time management systems
+#      - Nutrient/watering balancer, same for AC/air pressure
+#    - Large-scale solutions will demand high efficiency
+#      - Invest a lot, maximize production scale, minimize overhead costs
 
    
 
-** Consequences (?) The little farmer might die
-   See final point of bullet above
+# ** Consequences (?) The little farmer might die
+#    See final point of bullet above
 
   
-*** Climate
+# *** Climate
 
-    [CITATION] IPCC, 2018: Summary for Policymakers. In: Global Warming of 1.5°C.
-    An IPCC Special Report on the impacts of global warming of 1.5°C above
-    pre-industrial levels and related global greenhouse gas emission pathways,
-    in the context of strengthening the global response to the threat of climate
-    change, sustainable development, and efforts to eradicate poverty
-    [Masson-Delmotte, V., P. Zhai, H.-O. Pörtner, D. Roberts, J. Skea, P.R. Shukla,
-    A. Pirani, W. Moufouma-Okia, C. Péan, R. Pidcock, S. Connors, J.B.R. Matthews,
-    Y. Chen, X. Zhou, M.I. Gomis, E. Lonnoy, T. Maycock, M. Tignor, and
-    T. Waterfield (eds.)]. World Meteorological Organization, Geneva,
-    Switzerland, 32 pp.
+#     [CITATION] IPCC, 2018: Summary for Policymakers. In: Global Warming of 1.5°C.
+#     An IPCC Special Report on the impacts of global warming of 1.5°C above
+#     pre-industrial levels and related global greenhouse gas emission pathways,
+#     in the context of strengthening the global response to the threat of climate
+#     change, sustainable development, and efforts to eradicate poverty
+#     [Masson-Delmotte, V., P. Zhai, H.-O. Pörtner, D. Roberts, J. Skea, P.R. Shukla,
+#     A. Pirani, W. Moufouma-Okia, C. Péan, R. Pidcock, S. Connors, J.B.R. Matthews,
+#     Y. Chen, X. Zhou, M.I. Gomis, E. Lonnoy, T. Maycock, M. Tignor, and
+#     T. Waterfield (eds.)]. World Meteorological Organization, Geneva,
+#     Switzerland, 32 pp.
 
-    [A.1] Human activities are estimated to have caused approximately 1.0 degrees C of
-    global warming above pre-industrial levels, with a /likely/ range of 0.8
-    degrees C to 1.2 degrees C. Global warming is /likely/ to reach 1.5 degrees C
-    between 2030 and 2052 if it continues to increase at the current rate.
+#     [A.1] Human activities are estimated to have caused approximately 1.0 degrees C of
+#     global warming above pre-industrial levels, with a /likely/ range of 0.8
+#     degrees C to 1.2 degrees C. Global warming is /likely/ to reach 1.5 degrees C
+#     between 2030 and 2052 if it continues to increase at the current rate.
 
-    [A.1.3] Trends in intensity and frequency of some climate and weather extremes
-    have been detected over time spans during which about 0.5 degrees C of
-    global warming occurred (medium confidence). This assessment is based on
-    several lines of evidence, inccluding attribution studies for changes in
-    extremes since 1950.
+#     [A.1.3] Trends in intensity and frequency of some climate and weather extremes
+#     have been detected over time spans during which about 0.5 degrees C of
+#     global warming occurred (medium confidence). This assessment is based on
+#     several lines of evidence, inccluding attribution studies for changes in
+#     extremes since 1950.
 
-    [B.1] Climate models project robust differences in regional climate
-    characteristics between present-day and global warming of 1.5 degrees C, and
-    between 1.5 degrees C and 2 degrees C. These differences include increases in:
-    mean temperature in most land and ocean regions (high confidence), hot
-    extremes in most inhabited regions (high confidence), heavy precipitation in
-    several regions (medium confidence), and the probability of drought and
-    precipitation deficits in some regions (medium confidence).
+#     [B.1] Climate models project robust differences in regional climate
+#     characteristics between present-day and global warming of 1.5 degrees C, and
+#     between 1.5 degrees C and 2 degrees C. These differences include increases in:
+#     mean temperature in most land and ocean regions (high confidence), hot
+#     extremes in most inhabited regions (high confidence), heavy precipitation in
+#     several regions (medium confidence), and the probability of drought and
+#     precipitation deficits in some regions (medium confidence).
    
-    [B.5] Climate-related risks to health, livelihoods, food security, water
-    supply, human security, and economic growth are projected to increase with
-    global warming of 1.5 degrees C and increase further with 2 degrees C.
+#     [B.5] Climate-related risks to health, livelihoods, food security, water
+#     supply, human security, and economic growth are projected to increase with
+#     global warming of 1.5 degrees C and increase further with 2 degrees C.
 
-    [B.5.3] Limiting warming to 1.5°C compared with 2°C is projected to result in
-    smaller net reductions in yields of maize, rice, wheat, and potentially other
-    cereal crops, particularly in sub-Saharan Africa, Southeast Asia, and Central
-    and South America, and in the CO2-dependent nutritional quality of rice and
-    wheat (high confidence). Reductions in projected food availability are larger
-    at 2°C than at 1.5°C of global warming in the Sahel, southern Africa, the
-    Mediterranean, central Europe, and the Amazon (medium confidence). Livestock
-    are projected to be adversely affected with rising temperatures, depending
-    on the extent of changes in feed quality, spread of diseases, and water
-    resource availability (high confidence).
+#     [B.5.3] Limiting warming to 1.5°C compared with 2°C is projected to result in
+#     smaller net reductions in yields of maize, rice, wheat, and potentially other
+#     cereal crops, particularly in sub-Saharan Africa, Southeast Asia, and Central
+#     and South America, and in the CO2-dependent nutritional quality of rice and
+#     wheat (high confidence). Reductions in projected food availability are larger
+#     at 2°C than at 1.5°C of global warming in the Sahel, southern Africa, the
+#     Mediterranean, central Europe, and the Amazon (medium confidence). Livestock
+#     are projected to be adversely affected with rising temperatures, depending
+#     on the extent of changes in feed quality, spread of diseases, and water
+#     resource availability (high confidence).
 
-    [C.2] Pathways limiting global warming to 1.5°C with no or limited
-    overshoot would require rapid and far-reaching transitions in energy, land,
-    urban and infrastructure (including transport and buildings), and industrial
-    systems (high confidence). These systems transitions are unprecedented in
-    terms of scale, but not necessarily in terms of speed, and imply deep
-    emissions reductions in all sectors, a wide portfolio of mitigation options
-    and a significant upscaling of investments in those options (medium
-    confidence).
+#     [C.2] Pathways limiting global warming to 1.5°C with no or limited
+#     overshoot would require rapid and far-reaching transitions in energy, land,
+#     urban and infrastructure (including transport and buildings), and industrial
+#     systems (high confidence). These systems transitions are unprecedented in
+#     terms of scale, but not necessarily in terms of speed, and imply deep
+#     emissions reductions in all sectors, a wide portfolio of mitigation options
+#     and a significant upscaling of investments in those options (medium
+#     confidence).
 
-    [CITATION (BibTex)] 
-    Close
-    @article{10.1257/jep.23.2.53,
-    Author = {Barrett, Scott},
-    Title = {The Coming Global Climate-Technology Revolution},
-    Journal = {Journal of Economic Perspectives},
-    Volume = {23},
-    Number = {2},
-    Year = {2009},
-    Month = {June},
-    Pages = {53-75},
-    DOI = {10.1257/jep.23.2.53},
-    URL = {https://www.aeaweb.org/articles?id=10.1257/jep.23.2.53}}
+#     [CITATION (BibTex)] 
+#     Close
+#     @article{10.1257/jep.23.2.53,
+#     Author = {Barrett, Scott},
+#     Title = {The Coming Global Climate-Technology Revolution},
+#     Journal = {Journal of Economic Perspectives},
+#     Volume = {23},
+#     Number = {2},
+#     Year = {2009},
+#     Month = {June},
+#     Pages = {53-75},
+#     DOI = {10.1257/jep.23.2.53},
+#     URL = {https://www.aeaweb.org/articles?id=10.1257/jep.23.2.53}}
 
-    (54) Emissions of CO$_2$ and other greenhouse gases can be reduced
-    significantly using existing technologies, but stabilizing concentrations
-    will require a technological revolution - a "revolution" because it will
-    require fundamental change, achieved within a relatively short period of
-    time.
+#     (54) Emissions of CO$_2$ and other greenhouse gases can be reduced
+#     significantly using existing technologies, but stabilizing concentrations
+#     will require a technological revolution - a "revolution" because it will
+#     require fundamental change, achieved within a relatively short period of
+#     time.
 
-    (58) “Concentrated solar power” is a technology that, as the name implies,
-    raises the density of solar energy using mirrors to produce heat, which can
-    then be used to turn a turbine for electricity generation. An example is the
-    “power tower,” a system of sun-tracking mirrors that beam concentrated solar
-    power to a receiver at the top of a tower, through which flows a working
-    liquid for driving the turbine. An advantage of this technology is that it
-    can be scaled to the size of a central power plant (individual units are being
-    designed to generate up to 250 megawatts of power). It can also store thermal
-    energy to produce electricity at night, addressing the problem of
-    intermittency.
+#     (58) “Concentrated solar power” is a technology that, as the name implies,
+#     raises the density of solar energy using mirrors to produce heat, which can
+#     then be used to turn a turbine for electricity generation. An example is the
+#     “power tower,” a system of sun-tracking mirrors that beam concentrated solar
+#     power to a receiver at the top of a tower, through which flows a working
+#     liquid for driving the turbine. An advantage of this technology is that it
+#     can be scaled to the size of a central power plant (individual units are being
+#     designed to generate up to 250 megawatts of power). It can also store thermal
+#     energy to produce electricity at night, addressing the problem of
+#     intermittency.
 
-    (59) A more radical idea is “space solar power.” This technology would use
-    huge photovoltaic arrays to capture the sun’s energy in space, convert it to
-    direct electrical current, and then beam the electricity to Earth using
-    microwaves or lasers. To produce this energy, solar satellites would be
-    placed in high altitude, geosynchronous orbit, and spaced far enough apart
-    so that at least one unit faced the sun at all times—a solution to the
-    intermittency problem.
+#     (59) A more radical idea is “space solar power.” This technology would use
+#     huge photovoltaic arrays to capture the sun’s energy in space, convert it to
+#     direct electrical current, and then beam the electricity to Earth using
+#     microwaves or lasers. To produce this energy, solar satellites would be
+#     placed in high altitude, geosynchronous orbit, and spaced far enough apart
+#     so that at least one unit faced the sun at all times—a solution to the
+#     intermittency problem.
 
-    (59) An expansion of nuclear energy has the potential to reduce greenhouse
-    gas emissions significantly and within decades using proven technology. It
-    also has disadvantages. Addressing these will require innovation and
-    institutional changes.
+#     (59) An expansion of nuclear energy has the potential to reduce greenhouse
+#     gas emissions significantly and within decades using proven technology. It
+#     also has disadvantages. Addressing these will require innovation and
+#     institutional changes.
 
------
+# -----
 
 # NEW TOPIC ! How climate change will impact the world and technology
-
+#+LATEX_HEADER: \begin{document}
+#+LATEX_HEADER: \begin{mla}{Christian}{Elliott}{Manglik}{CISS-420}{4/16/2021}{Climate Change and the Reliance on Technology}
 From the 17th century through modern day, the world has plunged head-first
 into the era of technological development and its companion, capitalism. For
 the last 300 years we have scaled and progressed continuously in our quest
@@ -172,3 +176,6 @@ quickly invest in global operations to mitigate the natural effects of climate
 change. These endeavors will likely involve extensive research in fields like
 Artificial Intelligence, quantum mechanics, energy production and distribution,
 and food production. 
+
+#+LATEX_HEADER: \end{mla}
+#+LATEX_HEADER: \end{document}

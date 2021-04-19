@@ -1,0 +1,5 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{ifpdf}
+\usepackage{mla}
+\begin{document}
+\begin{mla}{Christian}{Elliott}{Manglik}{CISS-420}{\today}{Climate Change and its Relationship with Technology}
