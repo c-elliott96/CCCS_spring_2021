@@ -1,8 +1,0 @@
-	.data
-buffer:	.space 20
-
-	.text
-__get_str_input:
-	li $v0, 8	# read string syscall
-	# expects a0 to be read buffer address
-	# expects a1 to be buffer read length (reads n - 1 chars)
