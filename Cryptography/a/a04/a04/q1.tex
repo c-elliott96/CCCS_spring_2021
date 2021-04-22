@@ -1,8 +1,69 @@
 
 (a)
+Goal: Show $f(e) = e'$
+\begin{align*}
+  f(e) &= f(e * e)      & &\text{by the identity property of e} \\
+       &= f(e) *' f(e)  & &\text{by the definition of group isomorphism} \\
+\end{align*}
+and
+\begin{align*}
+  f(e) &= f(e) *' e'    & &\text{by neutrality axiom in G'} \\
+  f(e) *' f(e) &= f(e) *' e' \\
+  f(e) &= e'            & &\text{by the cancellation property} \\
+\end{align*}
 
 (b)
+Goal: show $f(x^{-1}) = f(x)^{-1}$
+\begin{enumerate}[nosep]
+\item[] Let $x \in G$
+\item[] \begin{align*}
+  f(x * x^{-1}) &= f(e) & &\text{Since $x * x^{-1} = e$ by the inverse axiom} \\
+  f(x * x^{-1}) &= e'   & &\text{by part (a)} \\
+  &\text{then} \\
+  f(x) * f(x^{-1}) &= e \\
+  f(x^{-1}) &= f(x)^{-1} * e \\
+\end{align*}
+\item[] Therefore, $f(x^{-1}) = f(x)^{-1}$
+\end{enumerate}
 
-(c)
+(c) Goal: Show an inverse is ... inversible? 
+\begin{enumerate}[nosep]
+\item[] I will prove this via mathematical induction.
+\item[] First, I will show that if $x \in G$, then $f(x^n) = f(x)^n$ for all integer $n$ where $n \geq 0$
+\item[]
+\item[] If $n=0$, we define $f(x^0) = 1 = f(x)^0$
+\item[] If $n=1$, we define $f(x^1) = x = f(x)^1$
+\item[]
+\item[] Thus, our $P(0)$ case for positive integers is
+\item[] \hspace{1cm} $P(0) = f(x^2) = f(x * x) = f(x) * f(x) = f(x)^2$
+\item[] Therefore, $P(0)$ holds for $n=2$.
+\item[]
+\item[] Assume $P(k)$ is true. That is, $P(k) = f(x^n) = f(x)^n$ for all $x \geq 0$
+\item[]
+\item[] Now, I will show $P(k+1)$ to be true
+\item[] \begin{align*}
+  f(x^{k+1}) &= f(x^kx) \\
+  &= f(x^k) * f(x)     \\
+  &= f(x)^k * f(x)     & &\text{by the inductive hypothesis} \\
+  &= f(x)^{k+1} \\
+\end{align*}
+\item[] Now I must show $f(x^n) = f(x)^n$ when $x < 0$
+\item[]
+\item[] We can write $n$ as $-m$, and thus ``pretend'' $m > 0$
+\item[] \begin{align*}
+  f(x^n) &= f(x^{-m}) \\
+  &= f((x^{-1})^m) \\
+  &= f(x)^{-m} & &\text{by part (b)} \\
+  &= f(x)^n   & &\text{because $n = -m$} \\
+\end{align*}
+\end{enumerate}
 
-(d)
+(d) Goal: Show that if $G$ is abelian, then $G'$ is also abelian
+\begin{enumerate}[nosep]
+\item[] If $G$ is abelian, and because $f$ is an isomorphism, we can say
+  $\forall$ $x,y \in G$, $\exists$ $a,b \in G'$ such that
+\item[] $a = f(x)$ and $b = f(y)$. Hence
+\item[] $a * b = f(x) * f(y) = f(x * y) = f(y * x) = f(y) * f(x) = b * a$
+\item[] Thus, if $G$ is abelian, $G'$ is too.
+\end{enumerate}
+
