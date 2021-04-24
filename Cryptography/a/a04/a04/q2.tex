@@ -1,7 +1,26 @@
 
-(a)
+(a) Goal: Prove that id is a group isomorphism
+
+\begin{enumerate}[nosep]
+\item[] $\forall x \in G, id(x) = x$, thus id is reflexive by definition of id \\
+\item[] $id_G(x) = x = id_G(x)$ thus, id is symmetric \\
+\item[] $id_G(x) = x' = x$ so $id_G(x') = x'' = x$ and thus id is transitive \\
+\end{enumerate}
 
 (b)
+\begin{enumerate}[nosep]
+\item[] If $x,y \in G'$, then $ f(a)= x$, $f(b) = y$ for some $a,b \in G$
+\item[] thus \begin{align*}
+  f^{-1}(x * y) &= f^{-1}(f(a) * f(b)) \\
+  &= f^{-1}(x) * f^{-1}(y) \\
+  &= f^{-1}(x * y) \\
+\end{align*}
+\end{enumerate}
 
 (c)
-
+\begin{enumerate}[nosep]
+\item[] Let $x \in G''$. Then $f'(a) = x$ for some $a \in G'$. 
+\item[] Let $a \in G'$. Then $f(b) = a$ for some $b \in G$.
+\item[] Since $a \in G'$ is attained through $b \in G$, and $x \in G''$ is attained through
+  $a \in G'$, we have shown that function composition is a group isomorphism.
+\end{enumerate}
