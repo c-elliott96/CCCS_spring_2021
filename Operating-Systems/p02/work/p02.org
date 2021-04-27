@@ -1,0 +1,48 @@
+* Operating Systems Final Project
+
+* Due date: 04/29/2021
+
+* Structure
+
+** Must be written in C
+   
+** Must be well documented
+   
+** The program shall take 4 parameters on startup
+   1. The port to accept connections (PORT)
+   2. The total number of connections allowed (#CON)
+   3. The max time the server will wait for a new request (TIMEOUT)
+   4. Directory root where all served files will be pulled from (DIR)
+
+** The program shall open a listener on PORT
+
+** The program shall create #CON threads which will suspend themselves until they receive a request from the parent process
+
+** Each thread will handle requests of the form
+   1. info FILE
+      - The response to the request will be the modification date of the file and the size of the file (in bytes)
+	# please see http://linux.about.com/library/cmd/blcmdl2_stat.htm
+	# you should return st_mtime and st_size
+	# -1 -1 will be the response if the file does not exist or is not accessible
+   2. get FILE
+      - returns st_size (-1 if the file does not exist or is not accessible)
+      - then, the entire contents of the file
+   3. exit
+      - closes connection
+   4. All file accesses will be from DIR and below
+
+** Each thread will close connections when TIMEOUT is reached and there has been no activity
+
+** The main process will create #CON threads, establish a listener on port PORT. The main process will receive a connection request, set up the connection and then hand off the connection to waiting thread. The waiting service thread will then take care of interactions with the connections
+
+** You MUST pay careful attention to how a thread comes on and off the work queue. You should use semaphores or other techniques to ensure that there is never a race condition for a thread to place itself on the wait queue and for the main process to take something off the wait queue. You need to document how you do this activity.
+   
+-----
+
+** TODO Plan our approach
+   - What do we need to get started?
+     - A server, to listen for connections
+     - A client, to connect to the server and issue commands
+
+** TODO Implement server
+   - Follow along example for simple server/client setup
