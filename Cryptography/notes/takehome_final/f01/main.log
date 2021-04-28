@@ -1,0 +1,233 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.19)  26 APR 2021 22:49
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-12-03> xparse <2020-03-03>
+
+! LaTeX Error: File `myassignmentpreamble.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(/usr/share/texmf-dist/tex/latex/tools/.tex File ignored)
+
+! LaTeX Error: File `yliow.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(/usr/share/texmf-dist/tex/latex/tools/.tex File ignored)
+
+! LaTeX Error: File `ciss451.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(/usr/share/texmf-dist/tex/latex/tools/.tex File ignored)
+
+! LaTeX Error: Command \TITLE undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \renewcommand\TITLE
+                       {Final exam (takehome)}
+? 
+
+! LaTeX Error: Command \thethm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \renewcommand{\thethm}
+                          {\arabic{thm}}
+? 
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count177
+\l__pdf_internal_box=\box47
+)
+No file main.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{document}
+                     
+? 
+! Undefined control sequence.
+l.11 \topmatter
+               
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 18.
+! Undefined control sequence.
+l.23  \li
+          The definition of $R$ being a ring, i.e., the ring axioms of $R$.
+? 
+! Undefined control sequence.
+l.24  \li
+          Fact 1: If $x \in R$, then $0 \cdot x = 0$.
+? 
+! Undefined control sequence.
+l.25  \li
+          Fact 2: If $x \in R$, then $0 \cdot x = 0 = x \cdot 0$.
+? 
+! Undefined control sequence.
+l.26  \li
+          Fact 3: If $x + y = 0$, then $y = -x$.
+? 
+! Undefined control sequence.
+l.27  \li
+          Fact 4: $y + x = 0$, then $y = -x$.
+? 
+! Undefined control sequence.
+l.28  \li
+          Fact 5: If $x \in R$, then $-(-x) = x$.
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \end{enumerate}
+                    
+? 
+
+! LaTeX Error: Environment align* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \begin{align*}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.35 (x + y\cdot
+                 z) + (-y) \cdot z &= x + (y \cdot z + (-y) \cdot z) & & \te...
+
+? 
+! Misplaced alignment tab character &.
+l.35 (x + y\cdot z) + (-y) \cdot z &
+                                    = x + (y \cdot z + (-y) \cdot z) & & \te...
+
+? 
+! Misplaced alignment tab character &.
+l.35 ...cdot z &= x + (y \cdot z + (-y) \cdot z) &
+                                                   & \text{by the associativ...
+
+? 
+! Misplaced alignment tab character &.
+l.35 ...ot z &= x + (y \cdot z + (-y) \cdot z) & &
+                                                   \text{by the associativit...
+
+? 
+! Undefined control sequence.
+l.35 ...= x + (y \cdot z + (-y) \cdot z) & & \text
+                                                  {by the associativity axio...
+
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.35 ... & & \text{by the associativity axiom of $
+                                                  +$} \\
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.35 ...& \text{by the associativity axiom of $+$}
+                                                   \\
+? 
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.36                               &
+                                    = x + (y + (-y)) \cdot z         & & \te...
+
+? 
+! Misplaced alignment tab character &.
+l.36 ...       &= x + (y + (-y)) \cdot z         &
+                                                   & \text{by the distributi...
+
+? 
+! Misplaced alignment tab character &.
+l.36 ...     &= x + (y + (-y)) \cdot z         & &
+                                                   \text{by the distributivi...
+
+? 
+! Undefined control sequence.
+l.36 ...= x + (y + (-y)) \cdot z         & & \text
+                                                  {by the distributivity axi...
+
+? 
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.37                               &
+                                    = x + 0 \cdot z                  & & \te...
+
+? 
+! Misplaced alignment tab character &.
+l.37 ...       &= x + 0 \cdot z                  &
+                                                   & \text{by the inverse ax...
+
+? 
+! Misplaced alignment tab character &.
+l.37 ...     &= x + 0 \cdot z                  & &
+                                                   \text{by the inverse axio...
+
+? 
+! Undefined control sequence.
+l.37 ...= x + 0 \cdot z                  & & \text
+                                                  {by the inverse axiom of $...
+
+? X
+ 
+Here is how much of TeX's memory you used:
+ 204 strings out of 479383
+ 5166 string characters out of 5875830
+ 272092 words of memory out of 5000000
+ 17405 multiletter control sequences out of 15000+600000
+ 403731 words of font info for 28 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,2n,46p,125b,54s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
+PDF statistics:
+ 0 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

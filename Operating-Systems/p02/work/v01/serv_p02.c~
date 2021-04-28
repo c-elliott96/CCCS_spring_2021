@@ -1,0 +1,86 @@
+/* 
+   Christian Elliott
+   Operating Systems project 02
+   2021-04-27
+ */
+
+/* 
+   1. Server:
+   - set up socket connection using port from argv
+ */
+
+#include <stdio.h>
+#include <stdlib.h> // atoi() convert char string to integer (for port argv)
+#include <string.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+  int socket_desc, client_sock, c, read_size;
+  struct sockaddr_in server, client;
+  char client_message[2000];
+
+  // Create socket
+  socket_desc = socket(AF_INET, SOCK_STREAM, 0);
+  if (socket_desc == -1)
+    {
+      printf("Could not create socket");
+    }
+  puts("Socket created");
+
+  // Get port number; currently expecting argv[1] to be port
+  int port = 8888;
+  if (argc == 2)
+    {
+      port = atoi(argv[1]);
+    }
+  
+  // Prepare the sockaddr_in structure
+  server.sin_family = AF_INET;
+  server.sin_addr.s_addr = INADDR_ANY;
+  server.sin_port = htons(port);
+
+  // Bind
+  if (bind(socket_desc, (struct sockaddr *)&server, sizeof(server)) < 0)
+    {
+      perror("bind failed. Error");
+      return 1;
+    }
+  puts("Bind done");
+
+  // Listen
+  listen(socket_desc, 3);
+
+  // Accept incoming connection
+  puts("Waiting for incoming connections ...");
+  c = sizeof(struct sockaddr_in);
+
+  // Accept connection from an incoming client
+  client_sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c);
+  if (client_sock < 0)
+    {
+      perror("accept failed");
+      return 1;
+    }
+  puts("Connection accepted");
+
+  // Receive message from client
+  while((read_size = recv(client_sock, client_message, 2000, 0)) > 0)
+    {
+      // Send the message back to the client
+      write(client_sock, client_message, strlen(client_message));
+    }
+
+  if (read_size == 0)
+    {
+      puts("Client disconnected");
+      fflush(stdout);
+    }
+  else if (read_size == -1)
+    {
+      perror("recv failed");
+    }
+
+  return 0;
+}

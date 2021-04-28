@@ -1,0 +1,520 @@
+\input{myassignmentpreamble}
+\input{yliow}
+\input{ciss451}
+\newcommand\COURSENAME{Discrete Math 2}
+\newcommand\COURSESHORTNAME{Discrete Math 2}
+\newcommand\COURSENUMBER{MATH325}
+\newcommand\TITLE{Assignment 3}
+\newcommand\AUTHOR{Dr Yihsiang Liow}
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{assignment}
+\definecolor{red}{rgb}{1,0,0}
+\newcommand\redtext[1]{\textcolor{red}{#1}}
+\begin{document}
+\topmatter
+
+
+
+Here are some facts about $(\Z, +, \cdot, 0, 1)$.
+In the following $x,y,z$ are integers, i.e. $x,y,z \in \Z$.
+
+\newcommand\LISTMARGIN{1in}
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[RING1:] $x,y \in \Z$ can be replaced by $x+y \in \Z$
+\item[RING2:] $(x + y) + z$ can be replaced by $x + (y + z)$
+\item[RING3:] $x + (y + z)$ can be replaced by $(x + y) + z$
+\item[RING4:] $x + 0$ can be replaced by $x$
+\item[RING5:] $x$ can be replaced by $x + 0$
+\item[RING6:] $0 + x$ can be replaced by $x$
+\item[RING7:] $x$ can be replaced by $0 + x$
+\item[RING8:] There is some $-x \in \Z$ 
+              such that $x + (-x)$ can be replaced by 0.
+\item[RING8B:] There is some $-x \in \Z$ 
+              such that 0 can be replaced by $x + (-x)$.
+\item[RING9:] There is some $-x \in \Z$ 
+              such that $(-x) + x$ can be replaced by 0.
+\item[RING9B:] There is some $-x \in \Z$ 
+              such that $0$ can be replaced by $(-x) + x$.
+\item[RING10:] $x+y$ can be replaced by $y + x$.
+\item[RING11:] $x, y \in \Z$ can be replaced by $xy \in \Z$
+\item[RING12:] $(xy)z$ can be replaced by $x(yz)$
+\item[RING13:] $x(yz)$ can be replaced by $(xy)z$
+\item[RING14:] $x1$ can be replaced by $x$
+\item[RING15:] $x$ can be replaced by $x1$
+\item[RING16:] $1x$ can be replaced by $x$
+\item[RING17:] $x$ can be replaced by $1x$
+\item[RING18:] $x(y + z)$ can be replaced by $xy + xz$
+\item[RING19:] $xy + xz$ can be replaced by $x(y + z)$
+\item[RING20:] $(y+z)x$ can be replaced $yx + zx$
+\item[RING21:] $yx+zx$ can be replaced $(y + z)x$
+\item[RING22:] $xy$ can be replaced by $yx$
+\item[RING23:] $xy=0$ can be replaced by [$x=0$ or $y=0$].
+\end{enumerate}
+
+The following are a notational rewrite rules for subtraction
+(i.e. the following are definitions and not axioms):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[RING24:] $x - y$ can be replaced by $x + (-y)$
+\item[RING25:] $x + (-y)$ can be replaced by $x - y$
+\end{enumerate}
+
+The following are from Theorems 1 and 2 proven in Assignment 1 (i.e.
+$0x = 0 = x0$)
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH1A:] $0x$ can be replaced by $0$
+\item[TH1B:] $0$ can be replaced by $0x$
+\item[TH1C:] $0$ can be replaced by $x0$
+\item[TH1D:] $x0$ can be replaced by $0$
+\item[TH1E:] $0x$ can be replaced by $x0$
+\item[TH1F:] $x0$ can be replaced by $0x$
+\end{enumerate}
+
+Here are some facts from Theorem 3 (i.e. $x+y = 0 \implies y = -x$ and
+$y + x \implies y=-x$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH3A:] If $x+y=0$, then $y$ can be rewritten as $-x$.
+\item[TH3B:] If $x+y=0$, then $-x$ can be rewritten as $y$.
+\item[TH3C:] If $y+x=0$, then $y$ can be rewritten as $-x$.
+\item[TH3D:] If $y+x=0$, then $-x$ can be rewritten as $y$.
+\end{enumerate}
+
+Here are some facts from Theorem 4 from Assignment 1:
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH4A:] $-(-x)$ can be rewritten as $x$.
+\item[TH4B:] $x$ can be rewritten as $-(-x)$.
+\end{enumerate}
+
+Here's Theorem 5 from Assignment 2 (i.e. $-1 \cdot x = -x = x \cdot (-1)$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH5A:] $-1 \cdot x$ can be replaced by $-x$
+\item[TH5B:] $-x$ can be replaced by $-1 \cdot x$
+\item[TH5C:] $-x$ can be replaced by $x \cdot (-1)$
+\item[TH5D:] $x \cdot (-1)$ can be replaced by $-x$ 
+\end{enumerate}
+
+Here's Theorem 6 from Assignment 2 (i.e. $(-y)x = -(yx) = y(-x)$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH6A:] $(-y)x$ can be replaced by $-(yx)$
+\item[TH6B:] $-(yx)$ can be replaced by $(-y)x$
+\item[TH6C:] $-(yx)$ can be replaced by $y(-x)$
+\item[TH6D:] $y(-x)$ can be replaced by $-(yx)$
+\item[TH6E:] $(-y)x$ can be replaced by $y(-x)$
+\item[TH6F:] $y(-x)$ can be replaced by $(-y)x$ 
+\end{enumerate}
+
+Here's Theorem 7 from Assignment 2 (i.e. $(-x)(-y) = xy$ and $(-1)(-1)=1$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH7A:] $(-x)(-y)$ can be replaced by $xy$
+\item[TH7B:] $xy$ can be replaced by $(-x)(-y)$
+\item[TH7C:] $(-1)(-1)$ can be replaced by $1$
+\item[TH7D:] $1$ can be replaced by $(-1)(-1)$
+\end{enumerate}
+
+Finally (Phew!) ... here's Theorem 8 ($0 = -0$):
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[TH8A:] $0$ can be replaced by $-0$
+\item[TH8B:] $-0$ can be replaced by $0$
+\end{enumerate}
+
+
+
+\setcounter{thm}{8}
+
+The following says that you can perform
+left or right \lq\lq cancellation'' of similar terms
+in an addition.
+ 
+\begin{thm} \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)] 
+If 
+\[
+a + x = a + y
+\]
+then
+\[
+x = y
+\]
+\item[(b)]
+If 
+\[
+x + a = y + a
+\]
+then
+\[
+x = y
+\]
+\end{enumerate}
+\end{thm}
+
+By now this one is way too easy for an assignment questions.
+You can try to prove this on your own.
+
+\newpage
+
+There's also a multiplicative version of cancellation:
+
+\begin{thm} \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)] 
+If
+\[ 
+ax = ay, \,\,\, a \neq 0
+\]
+then
+\[
+x = y
+\]
+\item[(b)]
+If
+\[ 
+xa = ya, \,\,\, a \neq 0
+\]
+then
+\[
+x = y
+\]
+\end{enumerate}
+\end{thm}
+
+\newpage
+
+Q1. Prove Theorem 10
+
+\SOLUTION
+
+\input{q1.tex}
+
+\newpage
+
+{\bf Divisors}
+
+Let $m, n \in \Z$.
+We say that $m$ divides $n$ is you find some $x \in \Z$ such that 
+\[
+mx = n
+\]
+For instance $m=6$ divides $n=42$ since for $x = 7$ we do have $6x = 42$.
+
+Instead of saying \lq\lq $m$ divides $n$'', for simplicity, we will
+write $m \mid n$.
+
+We add the following \lq\lq writing rules''.
+Note that these are definitions and not properties.
+
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[DIV1:] $d \mid a$ can be replaced by [$dx = a$ for some $x \in \Z$]
+\item[DIV2:] [$dx = a$ for some $x \in \Z$] can be replaced by $d \mid a$ 
+\end{enumerate}
+
+Note that there is a \lq\lq for some'' in the definition.
+The statement
+\[
+\lq\lq dx = a \text{ for some } x \in \Z"
+\]
+is the same as
+\[
+\lq\lq \text{there is some } x \in \Z \text{ such that } dx = a"
+\]
+which is of course the same as 
+\[
+\lq\lq \text{there exists some } x \in \Z \text{ such that } dx = a"
+\]
+They all mean the same thing.
+Of course you know that there's a symbol for \lq\lq there exists some'': 
+$\exists$.
+So the above 3 statements are written more formally as
+\[
+\exists x \in \Z (dx = a)
+\]
+You don't see the \lq\lq such that''.
+Some authors use a dot for \lq\lq such that'':
+\[
+\exists x \in \Z \cdot (dx = a)
+\]
+If the system (or the \lq\lq universe of discourse'') is known and fixed
+throughout, which for our case is $\Z$, then one usually just write
+\[
+\exists x \cdot (dx = a)
+\]
+
+More formally I could have written:
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[DIV1:] $d \mid a$ can be replaced by [$\exists x \in \Z (dx = a)$]
+\item[DIV2:] [$\exists x \in \Z (dx = a)]$ can be replaced by $d \mid a$ 
+\end{enumerate}
+
+
+I will usually avoid too many symbols and try to use more English words.
+So I will usually not use $\exists$.
+Too many abstract symbols actually prevents understanding for most students.
+I'll stick to
+\begin{enumerate}[leftmargin=\LISTMARGIN]
+\item[DIV1:] $d \mid a$ can be replaced by [$dx = a$ for some $x \in \Z$]
+\item[DIV2:] [$dx = a$ for some $x \in \Z$] can be replaced by $d \mid a$ 
+\end{enumerate}
+
+
+Although in the above I said 
+\lq\lq $\exists x \in \Z \cdot (dx = a)$'' 
+and
+\lq\lq $dx = a$ for some $x \in \Z$'' 
+are the same,
+in fact in formal logic they are different.
+When you go from
+\lq\lq $\exists x \in \Z \cdot (dx = a)$''
+to
+\lq\lq $dx = a$ for some $x \in \Z$''
+you are doing something called \lq\lq existential instantiation'':
+\begin{align*}
+           & \exists x \in \Z \cdot (dx = a) \\
+\THEREFORE & dx_1 = a \text{ for some } x_1 \in \Z & & \text{by existential instantiation}
+\end{align*}
+If you go from
+\lq\lq $dx_1 = a$ for some $x_1 \in \Z$''
+to
+\lq\lq $\exists x \in \Z \cdot (dx = a)$''
+you're doing something called \lq\lq existential generalization'':
+\begin{align*}
+           & dx_1 = a \text{ for some } x_1 \in \Z  \\
+\THEREFORE & \exists x \in \Z \cdot (dx = a) & & \text{by existential generalization}
+\end{align*}
+In order not to be bogged down with details, I will treat the two 
+as synonymous.
+Remember that they are actually considered different things in 
+formal logic.
+
+Here are some of the deduction rules you can use when working with
+\lq\lq for some'' (i.e. when working with $\exists$.)
+First suppose $P(y)$ is a predicate (think of this as a boolean formula)
+that involves a boolean variable $y$ and not $x$.
+Then you can do this:
+\begin{align*}
+           & \exists x \cdot (\exists y \cdot (P(y))) \\
+\THEREFORE & \exists y \cdot (P(y)) \\
+\end{align*}
+In other words you can remove the \lq\lq $\exists x$'' if the stuff
+after it does not involve $x$ at all.
+Likewise if say $P$ has nothing to do with $x$, then you can 
+make the following deduction:
+\begin{align*}
+           & \exists x \cdot (P) \\
+\THEREFORE & P \\
+\end{align*}
+For instance suppose you are given the statement 
+\lq\lq $\exists x \cdot (1+1 = 2)$'', 
+then you can make the following deduction:
+\begin{align*}
+           & \exists x \cdot (1+1=2) \\
+\THEREFORE & 1+1=2 \\
+\end{align*}
+Here's another example:
+\begin{align*}
+           & \exists x \cdot (\exists y \cdot (2 \times 3 = 1000)) \\
+\THEREFORE & \exists y \cdot (2 \times 3 = 1000) \\
+\THEREFORE & 2 \times 3 = 1000 \\
+\end{align*}
+I'm not saying that \lq\lq$2 \times 3 = 1000$'' is true.
+I'm saying {\it if} you're given the statement
+\lq\lq $\exists x \cdot (\exists y \cdot (2 \times 3 = 1000))$'',
+you can infer
+\lq\lq$2 \times 3 = 1000$''.
+Garbage-in-garbage-out, right?
+
+The above gives you the logic inference rule for removing $\exists$.
+
+Here's another logic inference rule you can do.
+In this case you have the opposite.
+The rule gives you the right to introduce $\exists$.
+Suppose $P(x)$ is a predicate again.
+Suppose also that there is a value in your domain, say $c$, such that
+$P(c)$ is true.
+Then you can make this inference:
+\begin{align*}
+           & P(c) \\
+\THEREFORE & \exists x \cdot (P(x))
+\end{align*}
+For instance let $P(x)$ be the statement
+\lq\lq $2x = 6$''.
+Of course you know that $2 \times 3 = 6$, i.e., $P(3)$ is true.
+You can therefore make the following inference:
+\begin{align*}
+           & 2 \times 3 = 6 \\
+\THEREFORE & \exists x \cdot (2 \times x = 6) 
+\end{align*}
+That's all there is to it.
+As another example, let me continue the above:
+\begin{align*}
+           & 2 \times 3 = 6 \\
+\THEREFORE & \exists x \cdot (2 \times x = 6) \\
+\THEREFORE & \exists y \cdot (\exists x \cdot (2 \times x = y))
+\end{align*}
+
+
+
+If $d$ is not a divisor of $a$, we write 
+\[
+d \nmid a
+\]
+
+In the following theorems, $a, b, c, x, y$ are integers.
+
+\newpage
+
+\begin{thm}
+$1 \mid n$.
+\end{thm}
+
+\proof 
+We have
+\begin{align*}
+           & 1n = n & & \text{by RING16} \\
+\THEREFORE & 1x = n \text{ for some $x \in \Z$ (for instance when $x = n \in \Z$)} \\
+\THEREFORE & 1 \mid n & & \text{by DIV2} 
+\end{align*}
+\qed
+
+If I want to be even more formal I would write
+\begin{align*}
+           & 1n = n                   & & \text{by RING16} \\
+\THEREFORE & \exists x \cdot (1x = n) & & \text{by existential generalization}\\
+\THEREFORE & 1 \mid n                 & & \text{by DIV2} 
+\end{align*}
+
+\newpage
+
+\begin{thm} \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)] $a \mid a$. 
+\item[(b)] If $a \mid b$ and $b \mid c$, then $a \mid c$. 
+\end{enumerate}
+\end{thm}
+
+(a) says that $\mid$ is a \lq\lq reflexive relation'' while 
+(b) says that $\mid$ is a \lq\lq transitive relation''.
+What's a relation? You can think of a relation as a boolean function.
+For instance the = on $\Z \times \Z$ is a relation.
+\begin{align*}
+(1=2) &= \false \\
+(2=2) &= \true \\
+\end{align*}
+
+\proof
+(a) Exercise.
+
+(b) We have
+\begin{align*}
+           & a \mid b \\
+\THEREFORE & ax = b \text{ for some $x \in \Z$} & & \tag{1}
+\end{align*}
+and 
+\begin{align*}
+           & b \mid c \\
+\THEREFORE & by = c \text{ for some $y \in \Z$} & & \tag{2}
+\end{align*}
+Altogether we have, for some $x \in \Z$ and $y \in \Z$,
+\begin{align*}
+              ax &= b  & & \text{by (1)}\\
+           (ax)y &= by \\
+                 &= c  & & \text{by (2)}\\
+\THEREFORE a(xy) &= c  & & \text{by RING12} \\
+\THEREFORE    az &= c  \text{ for some $z \in \Z$ (i.e. $z = xy \in \Z$)}
+                       & & \text{by RING11}
+\end{align*}
+\qed
+
+You can of course combine the above like this:
+\begin{align*}
+                 &a \mid b, \,\,\, b \mid c \\
+\THEREFORE ax    &= b \text{ for some $x \in \Z$}, \,\,\, 
+           by = c \text{ for some $y \in \Z$}  \tag{1,2}\\
+\THEREFORE (ax)y &= by \text{ for some $x \in \Z, y \in \Z$} \\
+                 &= c  & & \text{by (1) and (2)}\\
+\THEREFORE a(xy) &= c  \text{ for some $x \in \Z, y \in \Z$}  & & \text{by RING12} \\
+\THEREFORE    az &= c  \text{ for some $z \in \Z$ (i.e. $z = xy \in \Z$)}  
+                       & & \text{by RING11}\\
+\THEREFORE       &a \mid c
+\end{align*}
+But it's harder to follow if you put too many facts on the same line.
+
+If I really want to be formal, I can do this using the $\exists$ notation:
+\begin{align*}
+           &a \mid b, \,\,\, b \mid c \\
+\THEREFORE & (\exists x \cdot (ax = b)), \,\,\,  (\exists y \cdot (by = c)) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot ((ax)= b, by = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot ((ax)y= by, by = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot ((ax)y = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (a(xy) = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (a(xy) = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (\exists z \cdot (z = xy,  az = c)))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (\exists z \cdot (az = c)))) \\
+\THEREFORE & \exists y \cdot (\exists z \cdot (az = c))) \\
+\THEREFORE & \exists z \cdot (az = c) \\
+\THEREFORE & a \mid c
+\end{align*}
+Also in formal logic we should use $\land$ for our comma.
+So to be really formal I would write
+\begin{align*}
+           & (a \mid b) \land (b \mid c) \\
+\THEREFORE & (\exists x \cdot (ax = b)) \land  (\exists y \cdot (by = c)) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot ((ax)= b \land by = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot ((ax)y= by \land by = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot ((ax)y = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (a(xy) = c))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (a(xy) = c))) \\
+\THEREFORE & (\exists x \cdot 
+              (\exists y \cdot 
+               (\exists z \cdot (z = xy \land az = c)))) \\
+\THEREFORE & (\exists x \cdot (\exists y \cdot (\exists z \cdot (az = c)))) \\
+\THEREFORE & (\exists y \cdot (\exists z \cdot (az = c))) \\
+\THEREFORE & \exists z \cdot (az = c) \\
+\THEREFORE & a \mid c
+\end{align*}
+ 
+\newpage 
+
+\begin{thm} \mbox{}
+\begin{enumerate}[topsep=0in]
+\item[(a)] $1 \mid a$
+\item[(b)] $-1 \mid a$
+\item[(c)] If $d \mid a$, then $-d \mid a$
+\item[(d)] If $d \mid a$, then $d \mid ax$
+\item[(e)] If $d \mid a$ and $d \mid b$, then $d \mid (a + b)$.
+\item[(f)] Given integers $x$ and $y$, 
+           if $d \mid a$ and $d \mid b$, then $d \mid (ax + by)$.
+\end{enumerate}
+\end{thm}
+
+\newpage
+
+
+I'll leave the proofs of Theorem 13(a)--(c) to you.
+
+Q2. Prove Theorem 13(d)
+
+\SOLUTION
+
+\input{q2.tex}
+\newpage
+
+
+
+
+Q3. Prove Theorem 13(e)
+
+\SOLUTION
+
+\input{q3.tex}
+\newpage
+
+
+
+
+Q4. Prove Theorem 13(f)
+
+\SOLUTION
+
+\input{q4.tex}
+
+\end{document}
